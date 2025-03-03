@@ -37,8 +37,8 @@ if (NODE_ENV !== 'development') {
 
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log(`MODE => ${NODE_ENV}`);
     console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`Mode => ${NODE_ENV}`);
   });
 });
 

@@ -41,11 +41,9 @@ mern-crud/
 │   ├── middlewares/    # Custom middlewares (auth, error handling, etc.)
 │   ├── server.js       # Main server file
 ├── frontend/           # Frontend (React, Vite, TailwindCSS, DaisyUI)
-│   ├── src/            # React components and pages
+│   ├── src/            # React components
 │   ├── public/         # Static assets
 │   ├── index.html      # Main HTML file
-│   ├── main.jsx        # React entry point
-│   ├── App.jsx         # Main app component
 │   ├── vite.config.js  # Vite configuration
 ├── .env                # Environment variables (not committed)
 ├── .gitignore          # Git ignore file (to exclude .env, node_modules, etc.)

@@ -49,7 +49,6 @@ const UserList = () => {
                 {user.age}
               </div>
             </div>
-            <div>{user._id}</div>
             <EditDialog
               user={user}
               setUsers={setUsers}
