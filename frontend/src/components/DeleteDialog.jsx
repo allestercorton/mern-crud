@@ -1,8 +1,8 @@
 import { Trash } from 'lucide-react';
-import React, { useState } from 'react';
-import { deleteUser } from '../api/userApi';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 import Loader from './Loader';
+import { deleteUser } from '../api/userApi';
 
 const DeleteDialog = ({ id, setUsers, modalId }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,32 +24,33 @@ const DeleteDialog = ({ id, setUsers, modalId }) => {
   return (
     <>
       <button
-        className='btn btn-square btn-ghost'
+        className='btn btn-square btn-ghost btn-sm sm:btn-md'
         onClick={() => document.getElementById(modalId)?.showModal()}
+        aria-label='Delete user'
       >
-        <Trash className='size-[1.2em]' />
+        <Trash className='size-[1em] sm:size-[1.2em]' />
       </button>
-      <dialog id={modalId} className='modal'>
-        <div className='modal-box'>
+      <dialog id={modalId} className='modal modal-bottom sm:modal-middle'>
+        <div className='modal-box w-full max-w-md'>
           <h3 className='font-bold text-lg'>Delete Confirmation</h3>
           <p className='py-4'>
             Are you sure you want to delete this user? This action cannot be
             undone.
           </p>
-          <div className='modal-action'>
+          <div className='modal-action flex flex-col-reverse sm:flex-row gap-2 sm:gap-3'>
             <button
               type='button'
               onClick={() => document.getElementById(modalId)?.close()}
-              className='btn btn-ghost'
+              className='btn btn-ghost w-full sm:w-auto'
             >
-              Close
+              Cancel
             </button>
             <button
-              type='submit'
+              type='button'
               onClick={handleDelete}
-              className='btn btn-error'
+              className='btn btn-error w-full sm:w-auto'
             >
-              Confirm
+              Delete
               {isLoading && <Loader isButton />}
             </button>
           </div>

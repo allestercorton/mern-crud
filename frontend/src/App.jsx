@@ -4,9 +4,9 @@ import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
-    <main>
+    <main className='min-h-screen bg-base-200'>
       <UserList />
-      <Toaster />
+      <Toaster position='top-center' toastOptions={{ duration: 3000 }} />
     </main>
   );
 };
